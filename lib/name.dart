@@ -12,34 +12,40 @@ class _name_pageState extends State<name_page> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(
+        backgroundColor: Colors.black,
+        title: const Text(
           "Name page",
           style: TextStyle(
-            fontSize: 40,
+            fontSize: 16,
             fontWeight: FontWeight.bold,
           ),
         ),
       ),
-      body: const Column(
-        children: [
-          Text(
-            "Alarm",
-            style: TextStyle(
-              fontSize: 48,
-              fontWeight: FontWeight.bold,
-              color: Colors.black,
+      body: const Padding(
+        padding: EdgeInsets.all(16.0),
+        child: Column(children: [
+          Padding(
+            padding: EdgeInsets.only(right: 215),
+            child: Text(
+              "Who goes you?",
+              style: TextStyle(
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              ),
             ),
-            textAlign: TextAlign.left,
           ),
-          Text(
-            "Kiss List",
-            style: TextStyle(
-              fontSize: 16,
-              color: Color.fromARGB(255, 34, 34, 34),
+          Padding(
+            padding: EdgeInsets.only(top: 8.0),
+            child: Text(
+              "This determins the kind of questions you will be asked to answer ohh, no dull",
+              style: TextStyle(
+                fontSize: 16,
+                color: Color.fromARGB(255, 34, 34, 34),
+              ),
             ),
-            textAlign: TextAlign.left,
           ),
-        ],
+        ]),
       ),
     );
   }
