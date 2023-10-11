@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:twoam/home.dart';
 import 'package:twoam/name.dart';
 
 void main() {
@@ -9,7 +10,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: HomePage(),
+      home: SplashScreen(),
     );
   }
 }
@@ -17,14 +18,14 @@ class MyApp extends StatelessWidget {
 void _handleButtonPress(BuildContext context) {
   Navigator.push(
     context,
-    MaterialPageRoute(
+    (MaterialPageRoute(
       builder: (context) => name_page(),
-    ),
+    )),
   );
 }
 
-class HomePage extends StatelessWidget {
-  const HomePage({super.key});
+class SplashScreen extends StatelessWidget {
+  const SplashScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -64,6 +65,7 @@ class HomePage extends StatelessWidget {
                     ),
                   ],
                 ),
+                // here is where the button of the code goes in that allows me to chage the code bith
                 ElevatedButton.icon(
                   onPressed: () {
                     _handleButtonPress(context);
@@ -71,7 +73,7 @@ class HomePage extends StatelessWidget {
                   label: const Text("LFG"),
                   icon: const Icon(Icons.arrow_forward),
                   style: ElevatedButton.styleFrom(
-                    minimumSize: Size(358, 64),
+                    minimumSize: Size(372, 64),
                     backgroundColor: Colors.black,
                     foregroundColor: Colors.white,
                   ),
