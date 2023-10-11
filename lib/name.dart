@@ -11,25 +11,15 @@ class _UserNameState extends State<UserName> {
   TextEditingController _nameController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    return Container(
-      width: 400,
-      height: 64,
-      child: TextFormField(
-        controller: _nameController,
-        decoration: InputDecoration(
-          hintText: "any name nah name sha",
-          labelText: 'Your guy name',
-          focusedBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(4.0),
-            borderSide: BorderSide(
-              color: Colors.grey,
-            ),
-          ),
-          enabledBorder: OutlineInputBorder(
-            borderRadius: BorderRadius.circular(4.0),
-            borderSide: BorderSide(
-              color: Colors.grey,
-            ),
+    return Center(
+      child: Container(
+        width: 400,
+        height: 64,
+        child: TextField(
+          controller: _nameController,
+          decoration: InputDecoration(
+            hintText: "i2sabi",
+            border: OutlineInputBorder(),
           ),
         ),
       ),
@@ -83,10 +73,25 @@ class _name_pageState extends State<name_page> {
             ),
           ),
           SizedBox(height: 48.0),
-          Padding(
-            padding: EdgeInsets.all(0.0),
-            child: UserName(),
-          )
+          Column(
+            children: [
+              Padding(
+                padding: EdgeInsets.only(right: 256),
+                child: Text(
+                  "Your guy name?",
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+              SizedBox(height: 8.0),
+              Padding(
+                padding: EdgeInsets.all(0.0),
+                child: UserName(),
+              ),
+            ],
+          ),
         ]),
       ),
     );
