@@ -21,7 +21,7 @@ class _HomePageState extends State<HomePage> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "12:30p",
+                    "12:30pm",
                     style: TextStyle(fontSize: 48, fontWeight: FontWeight.bold),
                   ),
                   Text(
@@ -31,10 +31,24 @@ class _HomePageState extends State<HomePage> {
                   ),
                 ],
               ),
-            )
+            ),
+
+            // collaspes tiles for the alarm
+            // SizedBox(height:24),
+
+            Column(
+              children: <Widget>[
+                ExpansionTile(
+                  title: Text("Monday"),
+                  subtitle: Text("3 alarms"),
+                ),
+              ],
+            ),
           ],
         ),
       ),
     );
   }
 }
+
+class ExpansionTileExample {}

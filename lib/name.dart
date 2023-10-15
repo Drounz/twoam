@@ -99,7 +99,9 @@ class _name_pageState extends State<name_page> {
                     ),
                   ),
                 ),
+                //
                 SizedBox(height: 8.0),
+                //
                 Padding(
                   padding: EdgeInsets.all(0.0),
                   child: UserName(),
