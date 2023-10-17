@@ -46,12 +46,160 @@ class _HomePageState extends State<HomePage> {
                   ExpansionTile(
                     title: Text("Monday"),
                     subtitle: Text("3 alarms"),
+                    backgroundColor: Color.fromARGB(29, 30, 48, 1),
                     children: [
-                      Text("gym"),
-                      Text("fearwoman"),
+                      Align(
+                          alignment: Alignment.topLeft,
+                          child: Column(
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.only(
+                                  left: 16,
+                                ),
+                                child: Text(
+                                  "12:30pm",
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                              SizedBox(height: 8),
+                              Padding(
+                                padding: EdgeInsets.only(right: 16, bottom: 8),
+                                child: Text(
+                                  "Gym",
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                    fontStyle: FontStyle.normal,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          )),
                     ],
                   ),
                 ],
+              ),
+              //
+              SizedBox(height: 26),
+              //
+              Column(
+                children: <Widget>[
+                  ExpansionTile(
+                    title: Text("Monday"),
+                    subtitle: Text("3 alarms"),
+                    children: [
+                      Align(
+                          alignment: Alignment.topLeft,
+                          child: Column(
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.only(left: 16),
+                                child: Text(
+                                  "12:30pm",
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                              SizedBox(height: 8),
+                              Padding(
+                                padding: EdgeInsets.only(right: 16),
+                                child: Text(
+                                  "Gym",
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                    fontStyle: FontStyle.normal,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          )),
+                    ],
+                  ),
+                ],
+              ),
+              //
+              SizedBox(height: 26),
+              //
+              Column(
+                children: <Widget>[
+                  ExpansionTile(
+                    title: Text("Monday"),
+                    subtitle: Text("3 alarms"),
+                    children: [
+                      Align(
+                          alignment: Alignment.topLeft,
+                          child: Column(
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.only(left: 16),
+                                child: Text(
+                                  "12:30pm",
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                              SizedBox(height: 8),
+                              Padding(
+                                padding: EdgeInsets.only(right: 16),
+                                child: Text(
+                                  "Gym",
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                    fontStyle: FontStyle.normal,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          )),
+                    ],
+                  ),
+                ],
+              ),
+              //
+              SizedBox(height: 26),
+              //
+              Column(
+                children: <Widget>[
+                  ExpansionTile(
+                    title: Text("Monday"),
+                    subtitle: Text("3 alarms"),
+                    children: [
+                      Align(
+                          alignment: Alignment.topLeft,
+                          child: Column(
+                            children: [
+                              Padding(
+                                padding: EdgeInsets.only(left: 16),
+                                child: Text(
+                                  "12:30pm",
+                                  style: TextStyle(
+                                      fontSize: 16,
+                                      fontWeight: FontWeight.bold),
+                                ),
+                              ),
+                              SizedBox(height: 8),
+                              Padding(
+                                padding: EdgeInsets.only(right: 16),
+                                child: Text(
+                                  "Gym",
+                                  style: TextStyle(
+                                    fontSize: 14,
+                                    fontStyle: FontStyle.normal,
+                                  ),
+                                ),
+                              ),
+                            ],
+                          )),
+                    ],
+                  ),
+                ],
+              ),
+              //
+              SizedBox(
+                height: 26,
               ),
             ],
           ),
