@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'dart:async';
+import 'package:intl/intl.dart';
 import 'package:twoam/data/alarms.dart';
 import 'model/setalarms.dart';
 
@@ -10,11 +12,41 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  String formattedTime = '';
+  late Timer timer;
+
+  @override
+  void initState() {
+    super.initState();
+
+    // Initialize the time
+    _updateTime();
+
+    // Create a periodic timer to update the time every second
+    timer = Timer.periodic(Duration(seconds: 1), (Timer t) {
+      _updateTime();
+    });
+  }
+
+  void _updateTime() {
+    final now = DateTime.now();
+    final formatter =
+        DateFormat('HH:mm:ss'); // Customize the time format as needed
+    formattedTime = formatter.format(now);
+    setState(() {});
+  }
+
+  @override
+  void dispose() {
+    timer.cancel(); // Cancel the timer to free up resources
+    super.dispose();
+  }
+
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: Padding(
-        padding: EdgeInsets.all(16),
+        padding: EdgeInsets.only(left: 16, right: 16, bottom: 16, top: 80),
         child: SingleChildScrollView(
           physics: BouncingScrollPhysics(),
           child: Column(
@@ -25,7 +57,7 @@ class _HomePageState extends State<HomePage> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      "12:30pm",
+                      formattedTime,
                       style:
                           TextStyle(fontSize: 48, fontWeight: FontWeight.bold),
                     ),
