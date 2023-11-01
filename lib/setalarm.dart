@@ -1,24 +1,57 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_alarm_clock/flutter_alarm_clock.dart';
 
-class setAlarm extends StatefulWidget {
-  const setAlarm({super.key});
+class SetAlarm extends StatefulWidget {
+  const SetAlarm({super.key});
 
   @override
-  State<setAlarm> createState() => _setAlarmState();
+  _SetAlarmState createState() => _SetAlarmState();
 }
 
-class _setAlarmState extends State<setAlarm> {
+class _SetAlarmState extends State<SetAlarm> {
+  TimeOfDay _selectedTime = TimeOfDay.now();
+  late DateTime alarmTime;
+
+  Future<void> _selectTime(BuildContext context) async {
+    final TimeOfDay? picked = await showTimePicker(
+      context: context,
+      initialTime: _selectedTime,
+    );
+    if (picked != null && picked != _selectedTime) {
+      setState(() {
+        _selectedTime = picked;
+        alarmTime = DateTime(
+          DateTime.now().year,
+          DateTime.now().month,
+          DateTime.now().day,
+          _selectedTime.hour,
+          _selectedTime.minute,
+        );
+      });
+    }
+  }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.transparent,
+        backgroundColor: Colors.black,
         title: Text("Set alarm"),
       ),
       body: Padding(
         padding: EdgeInsets.all(16),
         child: Column(
-          children: [],
+          children: <Widget>[
+            Text(
+              'Selected Time: ${_selectedTime.format(context)}',
+              style: TextStyle(fontSize: 20),
+            ),
+            SizedBox(height: 20),
+            ElevatedButton(
+              onPressed: () => _selectTime(context),
+              child: Text('Select Alarm Time'),
+            ),
+          ],
         ),
       ),
     );

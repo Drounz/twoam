@@ -32,7 +32,8 @@ dependencies:
     sdk: flutter
   intl: ^0.17.0
   flutter_alarm_clock: ^0.0.1
-
+  flutter_local_notifications: ^5.0.0
+  timezone: ^0.7.0
 
 
   # The following adds the Cupertino Icons font to your application.
