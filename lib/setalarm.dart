@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_alarm_clock/flutter_alarm_clock.dart';
 
 class SetAlarm extends StatefulWidget {
   const SetAlarm({super.key});
