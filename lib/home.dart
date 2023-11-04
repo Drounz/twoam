@@ -56,6 +56,10 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Colors.black,
+        title: Text("Home"),
+      ),
       body: Padding(
         padding: EdgeInsets.only(left: 16, right: 16, bottom: 16, top: 80),
         child: SingleChildScrollView(
