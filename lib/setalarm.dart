@@ -30,6 +30,8 @@ class _SetAlarmState extends State<SetAlarm> {
     }
   }
 
+  
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -51,6 +53,22 @@ class _SetAlarmState extends State<SetAlarm> {
               child: Text('Select Alarm Time'),
             ),
           ],
+          
+          // If the user selected a time, set the alarm.
+             
+
+if (_selectedTime != null) {
+  alarmTime = _selectedTime;
+  await setAlarm();
+
+  // Display a confirmation message.
+  ScaffoldMessenger.of(context).showSnackBar(
+    SnackBar(
+      content: Text('Alarm set for ${alarmTime.format(context)}'),
+    ),
+  );
+},
+
         ),
       ),
     );
