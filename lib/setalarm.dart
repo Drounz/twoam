@@ -17,10 +17,29 @@ class SetAlarm extends StatefulWidget {
 class _SetAlarmState extends State<SetAlarm> {
   @override
   Widget build(BuildContext context) {
+    _getDateFromuser() async {
+      DateTime? _pickerDate = await showDatePicker(
+        context: context,
+        initialDate: DateTime.now(),
+        firstDate: DateTime(1999),
+        lastDate: DateTime(2030),
+      );
+    }
+
     return Scaffold(
       appBar: AppBar(
         title: Text("Set your alarm"),
         backgroundColor: Colors.black,
+      ),
+      body: Column(
+        children: [
+          IconButton(
+              onPressed: () {
+                print("hi Drounz");
+                _getDateFromuser();
+              },
+              icon: Icon(Icons.calendar_month_rounded))
+        ],
       ),
     );
   }
