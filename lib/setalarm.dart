@@ -26,6 +26,11 @@ class _SetAlarmState extends State<SetAlarm> {
       );
     }
 
+    // _getTimeFromUser() {
+    //   var pickedTime = _showTimePicker();
+    //   string _formatedTIme = pickedTime
+    // }
+
     return Scaffold(
       appBar: AppBar(
         title: Text("Set your alarm"),
